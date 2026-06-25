@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Password Strength Checker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Stars background -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Nebula glow blobs -->
+  <div class="nebula n1"></div>
+  <div class="nebula n2"></div>
+  <div class="nebula n3"></div>
+
+  <!-- 3D Grid floor -->
+  <div class="grid-bg"></div>
+
+  <div class="page">
+
+    <!-- Hero heading -->
+    <div class="hero">
+      <h1>
+        <span class="white">Smart </span><span class="pink">Password</span><br>
+        <span class="pink">Strength </span><span class="white">Checker</span>
+      </h1>
+      <p>Build secure passwords with real-time analysis and security.</p>
+    </div>
+
+    <!-- Main row: left btn + card + right btn -->
+    <div class="main-row">
+
+      <!-- Left button -->
+      <button class="side-btn left" onclick="focusInput()">Try Demo</button>
+
+      <!-- Password Card -->
+      <div class="card">
+        <div class="card-title">Password Checker</div>
+
+        <!-- Input field -->
+        <div class="input-wrap">
+          <input
+            class="pw-input"
+            id="pwInput"
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="new-password"
+            oninput="checkPassword()"
+          />
+          <button class="toggle-eye" onclick="toggleEye()" title="Show/hide" aria-label="Toggle visibility">
+            <span id="eyeIcon">🙈</span>
+          </button>
+        </div>
+
+        <!-- 7 Strength bars -->
+        <div class="bars-row" id="barsRow">
+          <div class="bar" id="b1"></div>
+          <div class="bar" id="b2"></div>
+          <div class="bar" id="b3"></div>
+          <div class="bar" id="b4"></div>
+          <div class="bar" id="b5"></div>
+          <div class="bar" id="b6"></div>
+          <div class="bar" id="b7"></div>
+        </div>
+
+        <!-- Strength label badge -->
+        <div class="strength-label-wrap">
+          <span class="strength-label vstrong" id="strengthLabel">Very Strong</span>
+        </div>
+
+        <!-- Criteria checklist -->
+        <ul class="criteria">
+          <li id="c-len">
+            <span class="check-icon">✓</span>
+            Minimum 8 characters
+          </li>
+          <li id="c-upper">
+            <span class="check-icon">✓</span>
+            Uppercase letter
+          </li>
+          <li id="c-lower">
+            <span class="check-icon">✓</span>
+            Lowercase letter
+          </li>
+          <li id="c-num">
+            <span class="check-icon">✓</span>
+            Number
+          </li>
+          <li id="c-special">
+            <span class="check-icon">✓</span>
+            Special character
+          </li>
+        </ul>
+
+        <!-- Floating shield badge -->
+        <div class="shield-wrap" id="shieldWrap">
+          <div style="position:relative; width:80px; height:80px;">
+            <div class="shield-orbit"></div>
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="sg" cx="40%" cy="30%" r="65%">
+                  <stop offset="0%" stop-color="#ff7070"/>
+                  <stop offset="55%" stop-color="#cc1010"/>
+                  <stop offset="100%" stop-color="#7a0000"/>
+                </radialGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <path d="M50 8 L85 22 L85 50 C85 70 68 85 50 92 C32 85 15 70 15 50 L15 22 Z"
+                fill="url(#sg)" filter="url(#glow)" stroke="#ff9999" stroke-width="1.5"/>
+              <path d="M50 20 L74 31 L74 50 C74 65 63 77 50 83 C37 77 26 65 26 50 L26 31 Z"
+                fill="rgba(0,0,0,0.25)"/>
+              <path d="M38 50 L46 58 L63 42" stroke="#ffdddd" stroke-width="4" fill="none"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+
+      <!-- Right button -->
+      <button class="side-btn right">Learn More</button>
+
+    </div>
+    <!-- End main-row -->
+
+  </div>
+  <!-- End page -->
+
+  <script src="script.js"></script>
+</body>
+</html>
