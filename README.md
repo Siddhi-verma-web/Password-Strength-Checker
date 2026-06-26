@@ -21,8 +21,7 @@ Smart Password Strength Checker With real time analysis
 A real-time password strength checker built with pure HTML, CSS, and JavaScript — no frameworks needed!
 
 ## 🌐 Live Demo
-🔗 [Click here to view](https://TERA_USERNAME.github.io/password-strength-checker/)
-
+🔗 https://siddhi-verma-web.github.io/Password-Strength-Checker/
 ## ✨ Features
 
 - ✅ Real-time password strength analysis
